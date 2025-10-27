@@ -15,7 +15,15 @@ export async function getGenres(req, res) {
 export async function getProducts(req, res) {
     try {
         const db = await dbConnection()
-        const productsRows = await db.all(`SELECT * FROM products`)
+        let query = `SELECT * FROM products`;
+        let params = []
+        const { genre } = req.query
+
+        if (genre) {
+            query += ' WHERE genre = ?'
+            params.push(genre)
+        }
+        const productsRows = await db.all(query, params)
         console.log('Fetching Products from database...')
         res.json(productsRows);
     } catch (err) {
