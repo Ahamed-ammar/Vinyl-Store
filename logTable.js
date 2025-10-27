@@ -1,7 +1,7 @@
 import { dbConnection } from './db/db.js'
 
 async function viewAllProducts() {
-  const db = dbConnection();
+  const db = await dbConnection();
 
   try {
     const products = await db.all('SELECT * FROM products')

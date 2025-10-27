@@ -3,7 +3,7 @@ import { vinyl } from './data.js'
 
 
 async function seedTable() {    
-    const db = dbConnection();
+    const db = await dbConnection();
 
     try {
         await db.exec('BEGIN TRANSACTION')

@@ -1,7 +1,7 @@
 import { dbConnection } from './db/db.js'
 
 const deleteTable = async () => {
-    const db = dbConnection();
+    const db = await dbConnection();
     try {   
         await db.exec(`DROP TABLE IF EXISTS products`)
         console.log('Deleted Sucessfully..')

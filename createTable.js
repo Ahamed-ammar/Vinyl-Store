@@ -2,7 +2,7 @@ import { dbConnection } from './db/db.js'
 
 async function createTable() {
 
-      const db = dbConnection();
+      const db = await dbConnection();
 
 
       await db.exec(`
