@@ -1,14 +1,9 @@
-import sqlite3 from 'sqlite3'
-import { open } from 'sqlite'
-import path from 'node:path'
+import { dbConnection } from './db/db.js'
 import { vinyl } from './data.js'
 
 
 async function seedTable() {    
-    const db = await open({
-        filename: path.join('database.db'),
-        driver: sqlite3.Database
-    })
+    const db = dbConnection();
 
     try {
         await db.exec('BEGIN TRANSACTION')
