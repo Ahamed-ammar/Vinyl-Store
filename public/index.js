@@ -57,10 +57,10 @@ async function populateGenreSelect() {
   const genres = await res.json()
   const select = document.getElementById('genre-select')
 
-  genres.forEach(genre => {
+  genres.forEach(obj => {
     const option = document.createElement('option')
-    option.value = genre
-    option.textContent = genre
+    option.value = obj.genre
+    option.textContent = obj.genre
     select.appendChild(option)
   })
 }
