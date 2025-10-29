@@ -1,13 +1,15 @@
-import express from 'express';
-import { productsRouter }from './routes/products.js';
+import express from 'express'
+import { productsRouter } from './routes/products.js'
 
-const PORT = 3000;
-const app = express();
-
-app.use(express.static('public'));
+const app = express()
+const PORT = 8000
+ 
+app.use(express.static('public'))
 
 app.use('/api/products', productsRouter)
-
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+ 
+app.listen(PORT, () => { 
+  console.log(`Server running at http://localhost:${PORT}`)
+}).on('error', (err) => {
+  console.error('Failed to start server:', err)
+}) 
