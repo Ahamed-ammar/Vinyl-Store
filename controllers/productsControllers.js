@@ -12,6 +12,7 @@ export async function getGenres(req, res) {
         res.status(500).json({error: 'Failed to fetch genre', details: err.message});
     }
 }
+
 export async function getProducts(req, res) {
     try {
         const db = await dbConnection()
