@@ -35,7 +35,7 @@ export async function getProducts(req, res) {
 
     } else if (search) {
 
-      query += ' WHERE title LIKE ? OR artist LIKE ? OR genre LIKE ?'
+      query += ' WHERE title LIKE ? OR artist LIKE ? OR genre LIKE ? price LIKE ?'
       const searchPattern = `%${search}%`
       console.log('Yes serch Feature Wrok...');
       params.push(searchPattern, searchPattern, searchPattern)

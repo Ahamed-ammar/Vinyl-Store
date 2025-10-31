@@ -83,7 +83,7 @@ export const vinyl = [
     {
         title: 'Dreams of Glass',
         artist: 'Wild Lanterns',
-        price: 46.69,
+    price: 46.69,
         image: 'vinyl10.png',
         year: 2019,
         genre: 'indie',
