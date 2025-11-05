@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Ahamed-ammar/Vinyl-Store#readme",
   "description": "",
   "dependencies": {
+    "bcryptjs": "^3.0.3",
     "express": "^5.1.0",
     "sqlite": "^5.1.1",
     "sqlite3": "^5.1.7",
