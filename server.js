@@ -9,6 +9,7 @@ const PORT = 8000
 const secret = process.env.SPIRAL_SESSION_SECRET || 'jellyfish-baskingshark'
 
 app.use(express.json())
+
 app.use(session({
   secret: secret,
   resave: false,
@@ -19,6 +20,7 @@ app.use(session({
     sameSite: 'lax'
   }
 }))
+
 app.use(express.static('public'))
 app.use('/api/products', productsRouter)
 app.use('/api/auth/me', meRouter)
