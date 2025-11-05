@@ -12,7 +12,7 @@ app.use(express.json())
 app.use(session({
   secret: secret,
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   cookie: {
     httpOnly: true,
     secure: false,
@@ -23,6 +23,7 @@ app.use(express.static('public'))
 app.use('/api/products', productsRouter)
 app.use('/api/auth/me', meRouter)
 app.use('/api/auth', authRouter)
+console.log('Session secret:', secret)
 
  
 app.listen(PORT, () => { 

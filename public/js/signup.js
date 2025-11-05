@@ -25,7 +25,7 @@ signupForm.addEventListener('submit', async (e) => {
     const data = await res.json()
 
     if (res.ok) {
-      window.location.href = '/'
+      window.location.href = '/' 
     } else {
       errorMessage.textContent = data.error || 'Registration failed. Please try again.'
     }

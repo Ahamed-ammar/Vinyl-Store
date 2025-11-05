@@ -33,8 +33,10 @@ export async function registerUser(req, res) {
             return res.status(400).json({ error: 'Username or email already in use.' })
         }
         const hashedPassword = await bcrypt.hash(password, 10)
-        db.run('INSERT INTO users (name, email, username, password) VALUES (?, ?, ?, ?)', 
+        const result = await db.run('INSERT INTO users (name, email, username, password) VALUES (?, ?, ?, ?)', 
             [name, email, username, hashedPassword])
+            
+        req.session.userId = result.lastID
         await db.close()
         return res.status(201).json({ message: 'User registered successfully' })
     }
